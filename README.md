@@ -80,7 +80,8 @@ Your WhatsApp account must be logged in Brave with --user-data-dir pointing to y
 def get_llm_response(prompt, code_only=False):
     res = requests.post("http://localhost:11434/api/generate", json={"model": "mistral", "prompt": prompt})
     return res.json()['response']
-...........................................................................................................................................................................................................................................................................................How to Use...................................................................................................
+
+5.How to use
     python3 main.py
    Command me: play let it go
    Command me: in music create project devil in c
@@ -89,15 +90,14 @@ def get_llm_response(prompt, code_only=False):
    Command me: send email to someone@gmail.com with subject 'dark rise' and message 'lucifer rises again'
    Command me: remind me to eat at 5
 
- .....................................................................................SecurityNotes................................................................................................
-
+6.SecurityNotes
 No AI calls are made unless LLM is integrated
 Gmail OAuth is local
 WhatsApp is local browser automation
 All file operations use send2trash instead of hard delete
 All path parsing is sandboxed inside ~/
 
-......................................................................................Future Features (Contribute?)................................................................................
+7.Future Features (Contribute?)
 GUI (Qt-based UI)
 LLM fallback chaining
 Audio Command parser (offline whisper support)
