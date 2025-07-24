@@ -1,0 +1,15 @@
+selenium==4.20.0
+requests==2.31.0
+psutil==5.9.8
+send2trash==1.8.2
+google-api-python-client==2.123.0
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+beautifulsoup4==4.12.3
+# Only needed if you're using espeak for voice
+pyttsx3==2.90  
+# Only needed if you want to parse PDFs manually
+PyPDF2==3.0.1  
+# Optional: If you use Ollama API or other local LLM wrappers
+httpx==0.27.0
