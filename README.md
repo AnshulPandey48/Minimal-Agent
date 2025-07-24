@@ -1,24 +1,45 @@
 A multi-purpose intelligent agent for Linux desktops that can interact with your system like a sarcastic AI devil. It supports voice/text interaction and can perform tasks like file management, media control, weather, WhatsApp automation, reminders, PDF reading, Gmail automation, web scraping, and even code generation — all served with dark humor and LLM-powered responses.
+
 Langchain implementation on the way!!!
+
 User Input
+
    |
+   
    v
+   
 LLM Agent (Intent Extractor)
+
    |
+   
    v
+   
 Action Parser & Handler Dispatcher
+
    |
+   
    v
+   
 ───────────────┐
+
                v
+               
 [System Actions]  ←→ [Web APIs]
+
 [Browser Control] ←→ [Selenium + Brave]
+
 [Gmail Integration] ←→ [OAuth + Google API]
+
 [WhatsApp Bot] ←→ [Selenium + WhatsApp Web]
+
 [PDF Reader] ←→ [Okular + pdftotext]
+
 [Media Control] ←→ [Playerctl]
+
 [Weather/API] ←→ [wttr.in or DuckDuckGo]
+
 [Code Generator] ←→ [LLM call (via Ollama/local LLM)]
+
 
 | Feature                      | Description                                      |
 | ---------------------------- | ------------------------------------------------ |
@@ -41,16 +62,26 @@ Action Parser & Handler Dispatcher
 
 
 AgentMultipurpose/
+
 │
-├── main.py                   # Main execution + Intent handling
+├── main.py   # Main execution + Intent handling
+
 ├── llm_agent.py              # (You must add this) Wrapper to connect to LLM (Ollama etc.)
+
 ├── credentials.json          # Gmail OAuth credentials
+
 ├── token.pickle              # Saved Gmail token after first run
+
 ├── README.md                 # (This doc)
+
 ├── gmail_debug.log           # Logs email errors
+
 ├── wa_debug.html             # WhatsApp debugging output
+
 ├── LuciferNotes/             # Saved notes by the agent
+
 ├── agent_config/             # Optional: You can move all paths/config here
+
 │
 └── requirements.txt
 
@@ -82,26 +113,46 @@ def get_llm_response(prompt, code_only=False):
     return res.json()['response']
 
 5.How to use
+
     python3 main.py
+    
    Command me: play let it go
+   
    Command me: in music create project devil in c
+   
    Command me: what’s the weather in Nagpur?
+   
    Command me: create file palindrome.c in Downloads and write a palindrome program
+   
    Command me: send email to someone@gmail.com with subject 'dark rise' and message 'lucifer rises again'
+   
    Command me: remind me to eat at 5
+   
 
 6.SecurityNotes
 No AI calls are made unless LLM is integrated
+
 Gmail OAuth is local
+
 WhatsApp is local browser automation
+
 All file operations use send2trash instead of hard delete
+
 All path parsing is sandboxed inside ~/
 
+
 7.Future Features (Contribute?)
+
 GUI (Qt-based UI)
+
 LLM fallback chaining
+
 Audio Command parser (offline whisper support)
+
 File encryption via GPG
+
 Encrypted vault management
+
 Scriptable automation chains
+
 
